@@ -1,0 +1,14 @@
+---
+description: Ngôn Sắc Việt — ba phần và quy tắc dữ liệu ngôn ngữ
+alwaysApply: true
+---
+
+# Ngôn Sắc Việt
+
+Ba thư mục là ba phần việc: `ai-model`, `be`, `fe`.
+
+Năm ngôn ngữ giai đoạn này: Tày `tyz`, Ê Đê `rad`, Chăm `cjm`, H'Mông `hmn`, Jrai `jra`. Trục dịch là tiếng Việt. Anh đi qua tiếng Việt.
+
+Không bịa câu tiếng dân tộc. Câu đưa vào mô hình phải có `verified=true` hoặc trạng thái `approved`. Chính tả H'Mông trong nước không trộn với RPA hải ngoại. Chữ Chăm Akhar Thrah là lớp OCR riêng.
+
+Đổi hợp đồng JSON giữa ba phần thì sửa cả API, model và model generate của Flutter trong cùng một thay đổi.

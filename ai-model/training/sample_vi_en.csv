@@ -1,0 +1,3 @@
+source_lang,target_lang,source,target,verified
+vi,en,xin chào,Hello,true
+en,vi,thank you,Cảm ơn,true

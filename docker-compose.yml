@@ -1,0 +1,23 @@
+services:
+  api:
+    build: ./be
+    environment:
+      DATABASE_URL: ${DATABASE_URL}
+      JWT_SECRET: ${JWT_SECRET:-dev-only-change-me}
+      ML_BASE_URL: http://ml:8100
+      LANGUAGES_CATALOG: /shared/languages.json
+    volumes:
+      - ./shared:/shared:ro
+    ports:
+      - "8000:8000"
+    depends_on:
+      - ml
+  ml:
+    build: ./ai-model
+    environment:
+      LANGUAGES_CATALOG: /shared/languages.json
+      ML_MT_ENGINE: glossary
+    volumes:
+      - ./shared:/shared:ro
+    ports:
+      - "8100:8100"

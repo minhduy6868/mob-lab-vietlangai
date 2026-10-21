@@ -1,0 +1,15 @@
+---
+description: Quy ước Flutter clean architecture
+globs: fe/**/*.dart
+alwaysApply: false
+---
+
+# Flutter
+
+View chỉ dựng UI. ViewModel (`Notifier`) nhận thao tác. Repository/store là nguồn dữ liệu. Use case chỉ khi có quy tắc riêng: `SyncUseCase`, `RecognizeTextUseCase`.
+
+Model API sinh bằng freezed + json_serializable. Không sửa file `.freezed.dart` hay `.g.dart`.
+
+Giao diện Material 3, theme sáng/tối, chuỗi qua ARB tiếng Việt và tiếng Anh. Route mới đi qua `GoRouter`.
+
+OCR trên máy chỉ Android/iOS qua `OcrEngine`. Web và Windows dùng implementation báo chưa hỗ trợ. Dữ liệu tra cứu ghi local trước, đồng bộ sau. Không lưu đáp án quiz trên máy.

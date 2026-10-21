@@ -1,0 +1,15 @@
+---
+description: Quy ước backend và Supabase
+globs: be/**/*.py
+alwaysApply: false
+---
+
+# Backend
+
+PostgreSQL đích là Supabase. URL dùng pooler cổng 6543, `ssl=require`, `statement_cache_size=0`.
+
+SQLite chỉ để chạy local và test. Logic nghiệp vụ nằm ở service Python, không nhân đôi trong Flutter.
+
+JWT access ngắn, refresh lưu hash và xoay vòng. Duyệt câu chỉ role `reviewer`. `GET /v1/lessons` không trả `is_correct`.
+
+Đóng góp idempotent theo `client_id`. Export CSV cho nhóm model chỉ gồm câu `approved`.

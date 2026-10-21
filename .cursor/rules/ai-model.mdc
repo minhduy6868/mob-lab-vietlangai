@@ -1,0 +1,15 @@
+---
+description: Quy ước phần mô hình dịch
+globs: ai-model/**/*.py
+alwaysApply: false
+---
+
+# AI model
+
+`Translator.translate` là chỗ duy nhất quyết định dịch thẳng hay qua tiếng Việt.
+
+Thứ tự một bước: bảng câu đã duyệt, rồi mô hình neural nếu cặp ngôn ngữ thuộc mô hình đó. Không có cặp nào thì trả `model_not_ready`, không trả câu đoán.
+
+`ML_MT_ENGINE=glossary` là mặc định. `mt5` cho tiếng dân tộc ↔ Việt. `nllb` chỉ cho Việt ↔ Anh.
+
+OCR và ASR trả `unloaded` cho đến khi checkpoint được kiểm tra. Không trộn Whisper Hmong–Thái vào tiếng H'Mông Việt Nam.
